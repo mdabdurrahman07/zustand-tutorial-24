@@ -1,19 +1,9 @@
-import { create } from "zustand"
-import { Button } from "./components/ui/button"
-
-function App() {
-
-  const useStore = create<{
-    count: number;
-    inc: () => void;
-    dec: () => void;
-  }>()
-
+const App = () => {
   return (
-    <>
-     <Button>Click me</Button>
-    </>
-  )
-}
+    <div>
+      
+    </div>
+  );
+};
 
-export default App
+export default App;
