@@ -25,7 +25,7 @@ const initialState: CartState = {
 export type CartSlice = CartState & CartActions
 
 
-export const createUserSlice : StateCreator<CartSlice, [["zustand/immer" , never]] , [] , CartSlice> = (set , get) => ({
+export const createCartSlice : StateCreator<CartSlice, [["zustand/immer" , never]] , [] , CartSlice> = (set , get) => ({
     ...initialState,
     incQnt: (productId) => set((state) => {
         const foundProduct = state.Products.find((product) => product.id === productId)
