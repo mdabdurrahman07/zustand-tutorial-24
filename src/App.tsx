@@ -7,7 +7,8 @@ import {
 } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { useStore } from "@/store/store";
-import ChangeQtyByBtn from "./components/ChangeQtyByBtn";
+import ChangeQtyByBtn from "@/components/ChangeQtyByBtn";
+import Cart from "@/components/Cart";
 
 const App = () => {
   const addProduct = useStore((state) => state.addProduct);
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <div className="space-y-2 h-screen max-w-sm mx-auto dark bg-background mt-2">
+     <Cart/>
       <h1 className="text-2xl">Products:</h1>
       <div className="space-y-2">
         {ProductData.map((products) => (
