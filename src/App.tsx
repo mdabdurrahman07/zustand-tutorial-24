@@ -7,6 +7,7 @@ import {
 } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { useStore } from "@/store/store";
+import ChangeQtyByBtn from "./components/ChangeQtyByBtn";
 
 const App = () => {
   const addProduct = useStore((state) => state.addProduct);
@@ -22,7 +23,9 @@ const App = () => {
             <CardContent>${products.price}</CardContent>
             <CardFooter>
               {Cartproducts.find((item) => item.id === products.id) ? (
-                "Add qnt"
+
+               <ChangeQtyByBtn productId={products.id}/>
+               
               ) : (
                 <Button onClick={() => addProduct(products)} variant="default">
                   Add to cart

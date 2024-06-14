@@ -5,11 +5,11 @@ import { Minus, Plus } from "lucide-react";
 
 type props = { productId: string };
 const ChangeQtyByBtn = ({ productId }: props) => {
-  const { getProductById, decQnt, intQnt } = useStore(
+  const { getProductById, decQnt, incQnt } = useStore(
     useShallow((state) => ({
       getProductById: state.getProductById,
       decQnt: state.decQnt,
-      intQnt: state.incQnt,
+      incQnt: state.incQnt,
     }))
   );
   const product = getProductById(productId);
@@ -21,7 +21,7 @@ const ChangeQtyByBtn = ({ productId }: props) => {
             <Minus/>
           </Button>
           <p>{product.qnt}</p>
-          <Button onClick={() => intQnt(product?.id)} size="icon">
+          <Button onClick={() => incQnt(product?.id)} size="icon">
             <Plus/>
           </Button>
         </div>

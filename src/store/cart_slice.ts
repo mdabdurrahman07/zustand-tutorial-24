@@ -34,20 +34,18 @@ export const createCartSlice : StateCreator<CartSlice, [["zustand/immer" , never
         }
     }),
 
-    decQnt: (ProductId) =>
-         set((state) =>{
-            const foundIndex = state.Products.findIndex((product)=>{
-                product.id === ProductId
-            })
-            if(foundIndex !== -1){
-                if (state.Products[foundIndex].qnt === 1){
-                    state.Products.splice(foundIndex , 1)
-                }
-                else{
-                    state.Products[foundIndex].qnt -= 1
+    decQnt: (productId) =>
+        set((state) => {
+            const foundIndex = state.Products.findIndex((product) => product.id === productId);
+            if (foundIndex !== -1) {
+                if (state.Products[foundIndex].qnt === 1) {
+                    state.Products.splice(foundIndex, 1);
+                } else {
+                    state.Products[foundIndex].qnt -= 1;
                 }
             }
-         }),
+        }),
+    
          addProduct: (product)=> set((state) => {
             state.Products.push({...product, qnt:1 })
          }),
